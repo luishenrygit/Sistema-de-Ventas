@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VentasController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,12 +42,13 @@ Route::middleware('auth')->group(function (){
     Route::get('/ventas', [VentasController::class, 'index'])->name('ventas.index');
     Route::get('/ventas/create', [VentasController::class, 'create'])->name('ventas.create');
     Route::post('/ventas', [VentasController::class, 'store'])->name('ventas.store');
+    Route::resource('cliente', ClienteController::class);
 
-    Route::controller(ClientesController::class)->group(function () {
+   /*  Route::controller(ClienteController::class)->group(function () {
         Route::get('cliente', 'index');
         Route::get('cliente/creando',  'crear');
         //Route::get('cliente/{datos}',  'verProducto');
-    });
+    }); */
 
    
 });

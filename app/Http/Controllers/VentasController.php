@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Venta;
 use Illuminate\Http\Request;
+use App\Models\Cliente;
+
 
 class VentasController extends Controller
 {
@@ -18,7 +20,8 @@ class VentasController extends Controller
     public function create()
     {
         $productos = Producto::all();
-        return view('ventas.create', compact('productos'));
+        $clientes = Cliente::all();
+        return view('ventas.create', compact('productos', 'clientes'));
     }
 
     public function store(Request $request)
