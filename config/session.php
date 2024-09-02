@@ -155,9 +155,9 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => env('SESSION_DOMAIN', null),
 
-    /*
+    /* RAMBO AGREGADO NULL
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
     |--------------------------------------------------------------------------
@@ -168,9 +168,9 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
-    /*
+    /* RAMBO AGREADO FALSE
     |--------------------------------------------------------------------------
     | HTTP Access Only
     |--------------------------------------------------------------------------
